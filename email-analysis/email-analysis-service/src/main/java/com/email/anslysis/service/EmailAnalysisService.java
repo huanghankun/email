@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface EmailAnalysisService {
     String checkAddress(String address);
+    List<String> domain2MX(String domain);
 }
