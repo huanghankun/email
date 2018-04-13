@@ -8,18 +8,15 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <artifactId>email-analysis-web</artifactId>
+
+    <artifactId>email-analysis-impl</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.hhk</groupId>
             <artifactId>email-analysis-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.hhk</groupId>
-            <artifactId>email-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 </project>

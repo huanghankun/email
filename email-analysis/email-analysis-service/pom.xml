@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>email</artifactId>
+        <artifactId>email-analysis</artifactId>
         <groupId>com.hhk</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>email-analysis</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>email-analysis-web</module>
-        <module>email-analysis-service</module>
-        <module>email-analysis-impl</module>
-    </modules>
+    <artifactId>email-analysis-service</artifactId>
 
 
 </project>

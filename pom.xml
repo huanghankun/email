@@ -9,6 +9,7 @@
 	<modules>
 		<module>email-analysis</module>
 		<module>email-war</module>
+		<module>email-common</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>email</name>
@@ -45,6 +46,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 
