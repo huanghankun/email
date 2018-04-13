@@ -5,12 +5,16 @@
 
 	<groupId>com.hhk</groupId>
 	<artifactId>email</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
+	<version>${email.version}</version>
+	<modules>
+		<module>email-analysis</module>
+		<module>email-war</module>
+	</modules>
+	<packaging>pom</packaging>
 	<name>email</name>
 	<description>邮件相关服务</description>
 
+	<!--父节点，springBoot-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -22,6 +26,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<email.version>0.0.1-SNAPSHOT</email.version>
 	</properties>
 
 	<dependencies>
@@ -32,19 +37,15 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 
 </project>
