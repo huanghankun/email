@@ -10,6 +10,7 @@
 		<module>email-analysis</module>
 		<module>email-war</module>
 		<module>email-common</module>
+		<module>email-aop</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>email</name>
@@ -46,7 +47,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 	</dependencies>
 
 
