@@ -10,27 +10,31 @@ import org.springframework.context.annotation.Configuration;
 
 import java.lang.annotation.*;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.logging.Logger;
 
 @Configuration
 @Aspect
 public class AopLogProxy {
+    private static Logger log = Logger.getLogger(AopLogProxy.class.getName());
     @Around("@annotation(com.email.aop.model.AopLog)")
     public Object printLog(ProceedingJoinPoint point) throws Throwable {
 
         MethodSignature signature = (MethodSignature) point.getSignature();
-    //获取被代理方法的类名
-        String className = signature.getDeclaringTypeName();
-        System.out.println("被代理方法的类名:"+ className);
-    //获取被代理的方法名
+        //获取被代理的方法名
         Method method = signature.getMethod();
-        System.out.println("被代理的方法名:"+ method.getName());
         AopLog annotation = method.getAnnotation(AopLog.class);
-        System.out.println("------------"+annotation.funModule()+"------------");
-        System.out.println( annotation.before());
-
+        log.info("<------------ 功能模块:"+annotation.funModule()+" ------------->");
+        log.info("类名称:"+ signature.getDeclaringTypeName());
+        log.info("方法名:"+ method.getName());
+        log.info("参数值:" + Arrays.toString(point.getArgs()));
+        log.info("执行前:" +annotation.before());
+        Long startTime = System.currentTimeMillis();
         Object proceed = point.proceed();
-        System.out.println("被代理的方法参数:"+ proceed);
-        System.out.println( annotation.after());
+        Long endTime = System.currentTimeMillis();
+        log.info("返回值："+ proceed);
+        log.info("总用时："+(endTime-startTime)+"毫秒");
+        log.info("执行后:" + annotation.after());
         return proceed;
     }
 } 
